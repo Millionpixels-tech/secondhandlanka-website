@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ShoppingBag,
-  Leaf,
   Heart,
   Search,
   MapPin,
@@ -105,11 +104,36 @@ const faqs = [
     "The App Store and Google Play listings are being prepared. The store buttons currently show a launch availability message. Check back here for download links.",
   ],
 ];
+// Ionicons leaf-outline, shared with the mobile app (public/icons/IONICONS-LICENSE).
+function Leaf({
+  size = 24,
+  strokeWidth = 1.5,
+}: {
+  size?: number;
+  strokeWidth?: number;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 512 512"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={(strokeWidth * 512) / 24}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M321.89,171.42C233,114,141,155.22,56,65.22c-19.8-21-8.3,235.5,98.1,332.7C231.89,468.92,352,461,392.5,392S410.78,228.83,321.89,171.42Z" />
+      <path d="M173,253c86,81,175,129,292,147" />
+    </svg>
+  );
+}
 function Brand() {
   return (
     <a className="brand" href="/" aria-label="Secondhand Lanka home">
       <span className="brand-symbol">
-        <ShoppingBag size={22} />
+        <img src="/icons/icon.svg" width="42" height="42" alt="" />
       </span>
       <span>
         secondhand

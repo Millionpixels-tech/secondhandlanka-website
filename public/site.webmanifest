@@ -1,0 +1,12 @@
+{
+  "name": "Secondhand Lanka",
+  "short_name": "Secondhand Lanka",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#DDF1AA",
+  "theme_color": "#176B50",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
