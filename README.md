@@ -1,0 +1,35 @@
+# Secondhand Lanka website
+
+A responsive React + TypeScript website, built with Vite. Includes a branded home page, interactive category showcase, FAQs, privacy policy, terms, contact page, and custom favicon.
+
+## Run
+
+```sh
+npm install
+npm run dev
+```
+
+## Verify and build
+
+```sh
+npm run lint
+npm run typecheck
+npm run build
+npm run preview
+```
+
+## Launch settings
+
+Copy `.env.example` to `.env.local`. Set `VITE_APP_STORE_URL` and `VITE_GOOGLE_PLAY_URL` to the real published app listings. Until set, store buttons display a coming-soon notice; sample URLs are in `src/config.ts`. `VITE_SUPPORT_EMAIL` defaults to `support@secondhandlanka.lk`.
+
+The contact form prepares a mailto message and opens the visitor's email app. It does not send or store messages itself.
+
+The policy pages are clearly marked launch drafts. Confirm the operator identity, actual hosting/data processing locations, retention schedule, account deletion process, and final terms before public release. Privacy and terms describe server-managed deletion, reporting, blocking, and moderator review. Reports expire after 90 days and completed deletion records after 30 days through daily backend maintenance. Deploy the matching mobile backend before publishing these policies.
+
+`/delete-account` is the external deletion-request page for Google Play. It prepares an email request for people without the app. Ensure `VITE_SUPPORT_EMAIL` is monitored. Support must verify ownership and initiate deletion using the operator procedure in the mobile repository’s `docs/PRODUCTION_RELEASE.md`. The website does not submit requests to Firebase automatically.
+
+## Hosting
+
+Deploy `dist/` after `npm run build` to a static host. Route fallback must serve `index.html` for `/privacy`, `/terms`, `/contact`, `/delete-account`, and unknown URLs. `public/_redirects` provides this for Netlify/Cloudflare Pages; `vercel.json` provides it for Vercel. Normal anchor navigation supports direct links, browser history, and keyboard navigation without a routing dependency.
+
+Product imagery is downloaded locally from Unsplash and used as illustrative sample items, not real marketplace listings. Sources: chair photo `1598300042247-d088f8ab3a91`, camera photo `1516035069371-29a1b244cc32`, shoes photo `1542291026-7eec264c27ff`. Fonts: DM Sans and Manrope via Google Fonts, with system fallbacks. Firebase privacy source: https://firebase.google.com/support/privacy.
