@@ -100,7 +100,7 @@ const faqs = [
   ],
   [
     "Is the app available to download?",
-    "The App Store and Google Play listings are being prepared. The store buttons currently show a launch availability message. Check back here for download links.",
+    "Yes. Secondhand Lanka is available for Android on Google Play. The iOS app is coming soon on the App Store.",
   ],
 ];
 // Ionicons leaf-outline, shared with the mobile app (public/icons/IONICONS-LICENSE).
@@ -151,7 +151,7 @@ function StoreButtons({ light = false }: { light?: boolean }) {
         {[
           {
             name: "App Store",
-            small: "Download on the",
+            small: config.hasAppStore ? "Download on the" : "Coming soon on",
             icon: Apple,
             url: config.appStoreUrl,
             ready: config.hasAppStore,
@@ -188,7 +188,7 @@ function StoreButtons({ light = false }: { light?: boolean }) {
         ))}
       </div>
       <p className="store-note" role="status">
-        {notice || "Coming soon on iOS & Android"}
+        {notice || (config.hasAppStore ? "Available on iOS & Android" : "Available on Android · Coming soon on iOS")}
       </p>
     </div>
   );
@@ -575,7 +575,7 @@ function Home() {
           <p>
             Make a little room for something good.
             <br />
-            Secondhand Lanka is coming to your pocket.
+            Download Secondhand Lanka for Android. iOS is coming soon.
           </p>
           <StoreButtons light />
         </div>

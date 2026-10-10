@@ -20,7 +20,7 @@ npm run preview
 
 ## Launch settings
 
-Copy `.env.example` to `.env.local`. Set `VITE_APP_STORE_URL` and `VITE_GOOGLE_PLAY_URL` to the real published app listings. Until set, store buttons display a coming-soon notice; sample URLs are in `src/config.ts`. `VITE_SUPPORT_EMAIL` defaults to `support@secondhandlanka.lk`.
+Copy `.env.example` to `.env.local`. Android is available through the default Google Play listing (`lk.secondhand.app`); set `VITE_GOOGLE_PLAY_URL` to override it. iOS displays a coming-soon notice until `VITE_APP_STORE_URL` is set to the published App Store listing. `VITE_SUPPORT_EMAIL` defaults to `support@secondhandlanka.lk`.
 
 The contact form prepares a mailto message and opens the visitor's email app. It does not send or store messages itself.
 
